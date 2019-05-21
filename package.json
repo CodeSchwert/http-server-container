@@ -5,9 +5,9 @@
   "main": "Dockerfile",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node_modules/http-server/bin/http-server -p 8081",
+    "start": "node_modules/http-server/bin/http-server",
     "docker:build": "docker build -t http-server .",
-    "docker:start": "docker run --name http-server --rm -p 8081:8081  http-server",
+    "docker:start": "docker run --name http-server --rm -p 8080:8080 http-server",
     "docker:up": "npm run docker:build && npm run docker:start"
   },
   "repository": {
