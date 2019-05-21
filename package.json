@@ -1,0 +1,26 @@
+{
+  "name": "http-server-container",
+  "version": "1.0.0",
+  "description": "Dockerfile for running npm http-server in a container.",
+  "main": "Dockerfile",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/http-server/bin/http-server -p 8081",
+    "docker:build": "docker build -t http-server .",
+    "docker:start": "docker run --name http-server --rm -p 8081:8081  http-server",
+    "docker:up": "npm run docker:build && npm run docker:start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/CodeSchwert/http-server-container.git"
+  },
+  "author": "CodeSchwert (https://github.com/CodeSchwert)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeSchwert/http-server-container/issues"
+  },
+  "homepage": "https://github.com/CodeSchwert/http-server-container#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
